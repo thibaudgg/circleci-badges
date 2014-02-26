@@ -29,8 +29,8 @@ end
 get '/:owner/:repo/:token' do
   circleci = CircleCI.new(params[:owner], params[:repo], params[:token])
   if circleci.status == 'Success'
-    redirect 'http://img.shields.io/badge/build-passing-green.svg'
+    redirect 'https://img.shields.io/badge/build-passing-green.svg'
   else
-    redirect 'http://img.shields.io/badge/build-failing-red.svg'
+    redirect 'https://img.shields.io/badge/build-failing-red.svg'
   end
 end
