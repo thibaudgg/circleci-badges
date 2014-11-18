@@ -7,5 +7,11 @@ get '/:owner/:repo/:token' do
   xml = open(url).read
   status = MultiXml.parse(xml)['Projects']['Project']['lastBuildStatus']
   badge = status == 'Success' ? 'build-passing-brightgreen.svg' : 'build-failing-red.svg'
+
+  headers \
+    'Pragma' => 'no-cache',
+    'Cache-Control' => 'no-cache',
+    'Age': 0
+
   redirect "https://img.shields.io/badge/#{badge}"
 end
