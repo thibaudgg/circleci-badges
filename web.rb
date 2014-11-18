@@ -6,6 +6,6 @@ get '/:owner/:repo/:token' do
   url = "https://circleci.com/gh/#{params[:owner]}/#{params[:repo]}.cc.xml?circle-token=#{params[:token]}"
   xml = open(url).read
   status = MultiXml.parse(xml)['Projects']['Project']['lastBuildStatus']
-  badge = status == 'Success' ? 'build-passing-green.svg' : 'build-failing-red.svg'
+  badge = status == 'Success' ? 'build-passing-brightgreen.svg' : 'build-failing-red.svg'
   redirect "https://img.shields.io/badge/#{badge}"
 end
