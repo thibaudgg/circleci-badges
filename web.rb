@@ -11,7 +11,7 @@ get '/:owner/:repo/:token' do
   headers \
     'Pragma' => 'no-cache',
     'Cache-Control' => 'no-cache',
-    'Age': 0
+    'Age' => 0
 
   redirect "https://img.shields.io/badge/#{badge}"
 end
