@@ -12,7 +12,7 @@ get '/:owner/:repo/:token' do
 
   etag Digest::SHA1.base64digest(badge)
   cache_control :no_cache, :no_store
-  headers 'Content-Type' => 'text/svg+xml'
+  headers 'Content-Type' => 'image/svg+xml;charset=utf-8'
 
   open(badge).read
 end
