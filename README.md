@@ -1,12 +1,14 @@
 circleci-badges
 ===============
 
-CircleCI badges make right (with [shields.io](http://shields.io))
+CircleCI now support nice (with [shields.io](http://shields.io)) badges.
 
-## Usage
+Because of the new [Heroku pricing](https://www.heroku.com/pricing) circleci-badges.herokuapp.com has been shut down, please update your badge links.
 
-Just call `https://circleci-badges.herokuapp.com/:owner/:repo/:circle-ci-badge-token`
+So please replace:
 
-## Or use the CircleCI way (recommended)
+`https://circleci-badges.herokuapp.com/:owner/:repo/:circle-ci-badge-token`
+
+by:
 
 `https://circleci.com/gh/:owner>/:repo.svg?style=shield&circle-token=:circle-ci-badge-token`
